@@ -1,3 +1,25 @@
+NOTE: This repo was forked by masschallenge to get around a build failure, tracked in AC-8193
+
+The build failure occurred when this repo's setup.py was executed by our buildout. Error output follows:
+
+```
+We have no distributions for bullet-train that satisfies 'bullet-train'.Getting distribution for 'bullet-train'.Fetching bullet-train 1.0.5 from: https://files.pythonhosted.org/packages/01/ab/e14e7788f5980116556ca34df6594673e802b526d1741e6257e499e675c7/bullet-train-1.0.5.tar.gz#sha256=f229f7f544edab0122cc027e488fd037f814421c42bc0ce7df10d89216a593d0Running easy_install:"/usr/bin/python3.6" "-c" "import sys; sys.path[0:0] = ['/usr/local/lib/python3.6/dist-packages']; from setuptools.command.easy_install import main; main()" "-mZUNxd" "/srv/www/mc/current/eggs/tmpibfgcf9c" "/tmp/tmpexzqsofsget_dist/bullet-train-1.0.5.tar.gz"path=['/usr/local/lib/python3.6/dist-packages']
+
+Processing bullet-train-1.0.5.tar.gz
+Writing /tmp/easy_install-h_hquola/bullet-train-1.0.5/setup.cfg
+Running bullet-train-1.0.5/setup.py -q bdist_egg --dist-dir /tmp/easy_install-h_hquola/bullet-train-1.0.5/egg-dist-tmp-kwoubpe2
+error: [Errno 2] No such file or directory: 'Readme.md'
+An error occurred when trying to install /tmp/tmpexzqsofsget_dist/bullet-train-1.0.5.tar.gz. Look above this message for any errors that were output by easy_install.
+While:
+  Installing python.
+  Getting distribution for 'bullet-train'.
+
+An internal error occurred due to a bug in either zc.buildout or in a
+recipe being used:
+```
+
+We have made no behavioral changes to this repo, and will return to the main line when we have either figured out the build issue or find a version that builds without this error in our buildout process. 
+
 <img width="100%" src="https://raw.githubusercontent.com/SolidStateGroup/bullet-train-frontend/master/hero.png"/>
 
 # Bullet Train Client
