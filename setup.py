@@ -1,8 +1,11 @@
 from setuptools import setup
 
-with open("Readme.md", "r") as readme:
-    long_description = readme.read()
-
+try:
+    with open("Readme.md", "r") as readme:
+        long_description = readme.read()
+except:
+    long_description = "Readme.md not found"
+    
 setup(
     name="bullet-train",
     version="1.0.5",
